@@ -17,3 +17,11 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+  run-windows-commands:
+    runs-on: windows-2019
+    steps:
+      - name: print directory
+        run: Get-Location
+      - name: print directory with bash
+        run: pwd
+        shell: bash
