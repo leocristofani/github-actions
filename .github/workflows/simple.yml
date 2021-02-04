@@ -19,6 +19,7 @@ jobs:
         shell: python
   run-windows-commands:
     runs-on: windows-2019
+    needs: [run-shell-commands]
     steps:
       - name: print directory
         run: Get-Location
