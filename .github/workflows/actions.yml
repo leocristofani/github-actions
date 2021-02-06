@@ -1,6 +1,21 @@
 name: Actions Workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - "feature/*" # matches branchs with name that starts with feature/
+  # Intervals
+  # schedule:
+  #   - cron: "0/5 * * * *"
+
+  # HTTP Post request
+  repository_dispatch:
+    types: [build]
+
+  # Github events
+  pull_request:
+    types: [opened]
 
 jobs:
   run-github-actions:
